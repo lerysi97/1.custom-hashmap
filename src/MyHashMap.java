@@ -9,7 +9,7 @@ public class MyHashMap<K, V> {
     }
 
     static class Entry<K, V> {
-        private K key;
+        private final K key;
         private V value;
         private Entry<K, V> next;
 
@@ -85,6 +85,12 @@ public class MyHashMap<K, V> {
                 entry = entry.next;
             }
         }
+
+        String delete = myHashMap.remove(2);
+        System.out.println("Удалили: " + delete);
+
+        myHashMap.remove(2);
+
         System.out.println("Значение по ключу 2: " + myHashMap.get(2));
         System.out.println("Значение по ключу 99: " + myHashMap.get(99));
     }
